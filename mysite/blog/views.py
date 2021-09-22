@@ -16,13 +16,10 @@ def post_list(request, tag_slug=None):
     tag = get_object_or_404(Tag, slug=tag_slug)
     object_list = object_list.filter(tags__in=[tag])
 
-
   object_list = Post.objects.all()
   paginator = Paginator(object_list, 3) # По 3 статьи на каждой странице.
   page_number = request.GET.get('page')
   page_obj=paginator.get_page(page_number)
-
-
 
   return render(request,
     'post/blog.html',
@@ -31,7 +28,8 @@ def post_list(request, tag_slug=None):
     'tag': tag})
 
 def post_detail(request, year, month, day, post):
-  post = get_object_or_404(Post, slug=post,
+  post = get_object_or_404(Post,
+    slug=post,
     status='published',
     publish__year=year,
     publish__month=month,
@@ -60,12 +58,11 @@ def post_detail(request, year, month, day, post):
       new_comment.post = post
       # Save the comment to the database
       new_comment.save()
-
       comment_form = CommentForm()
+
       return redirect(post)
   else:
     comment_form = CommentForm()
-
 
   context={'post': post,
   'comments': comments,
@@ -74,6 +71,5 @@ def post_detail(request, year, month, day, post):
   'similar_posts': similar_posts,
   'right_block':right_block,
   'tags':tags}
-
 
   return render(request,'post/blog-single.html',context)

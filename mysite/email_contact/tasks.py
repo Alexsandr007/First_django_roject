@@ -11,5 +11,4 @@ def send_message(user_email,text,subject,name, cart_model):
 		massage=name+'\n'+time+'\n'+text
 	else:
 		massage=model_car+'\n'+name+'\n'+time+'\n'+text
-	print('yes')
 	send(user_email,massage) 

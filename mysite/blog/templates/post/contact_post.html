@@ -9,7 +9,8 @@
             <li class="nav-item"><a href="{% url 'pricing' %}" class="nav-link">Pricing</a></li>
             <li class="nav-item "><a href="{% url 'cars:post_list' %}" class="nav-link">Cars</a></li>
             <li class="nav-item "><a href="{% url 'blog:post_list' %}" class="nav-link">Blog</a></li>
-            <li class="nav-item active"><a href="{% url 'contact:contact' %}" class="nav-link">Contact</a></li>
+            <li class="nav-item active"><a href="{% url 'contact:contact' %}" class="nav link">Contact</a></li>
+            <li class="nav-item"><a href="{% url 'registration:registration' %}" class="nav-link">Registration</a></li>
           </ul>
         </div>
 {% endblock %}
@@ -29,17 +30,17 @@
     <section class="ftco-section contact-section">
       <div class="container">
         <div class="row d-flex mb-5 contact-info">
-        	<div class="col-md-4">
-        		<div class="row mb-5">
-		          
-		          <div class="col-md-12">
-		          	<div class="border w-100 p-4 rounded mb-2 d-flex">
-			          	<div class="icon mr-3">
-			          		<span class="icon-envelope-o"></span>
-			          	</div>
-			            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-			          </div>
-		          </div>
+            <div class="col-md-4">
+                <div class="row mb-5">
+
+                  <div class="col-md-12">
+                      <div class="border w-100 p-4 rounded mb-2 d-flex">
+                          <div class="icon mr-3">
+                              <span class="icon-envelope-o"></span>
+                          </div>
+                        <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                      </div>
+                  </div>
 
               <div class="col-md-12">
                 <div class="border w-100 p-4 rounded mb-2 d-flex">
@@ -48,34 +49,34 @@
                           <span>The model of car:</span>
                           <a class="num"><small class="currency"></small>{{posts.model_for_car}}</a>
 
-                  </p>  
-                    
+                  </p>
+
                 </div>
               </div>
-               
+
               <div class="col-md-12">
                 <div class="border w-100 p-4 rounded mb-2 d-flex">
 
                   <p>
                           <span>Cost for this car:</span>
                           <a class="num"><small class="currency">$</small>{{posts.cost_hour}}/per hour</a>
-                         
+
                         <br>
-                      
+
                           <a class="num"><small class="currency">$</small>{{posts.cost_day}}/per day</a>
-                        
-                        
+
+
                         <br>
                           <a class="num"><small class="currency">$</small>{{posts.cost_mounth}}/per mounth</a>
-                          
+
                       </p>
-                    
+
                 </div>
               </div>
 
 
-		        </div>
-          
+                </div>
+
           </div>
           <div class="col-md-8 block-9 mb-md-5">
             <form action="{% url 'contact:send' %}"  method='post' class="bg-light p-5 contact-form">
@@ -97,15 +98,15 @@
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
             </form>
-          
+
           </div>
         </div>
         <div class="row justify-content-center">
-        	<div class="col-md-12">
-        		<div id="map" class="bg-white"></div>
-        	</div>
+            <div class="col-md-12">
+                <div id="map" class="bg-white"></div>
+            </div>
         </div>
       </div>
     </section>
-	
+
 {% endblock %}

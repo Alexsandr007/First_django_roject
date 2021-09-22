@@ -30,4 +30,5 @@ urlpatterns = [
     path('about/',views.about_page,name='about'),
     path('services/',views.services_page,name='services'),
     path('pricing/',views.pricing_page,name='pricing'),
+    path('registration/', include('registration.urls', namespace='registration')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

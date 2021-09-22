@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',#регистрируем приложение
     'cars.apps.CarsConfig',#регистрируем приложение
+    'registration.apps.RegistrationConfig',#регистрируем приложение
     'email_contact.apps.EmailContactConfig',#регистрируем приложение
     'taggit',#отвечает за теги
     # Celery

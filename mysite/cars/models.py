@@ -2,8 +2,6 @@ from django.db import models
 
 
 class Car(models.Model):
-	
-
 	subheading=models.CharField(max_length=255,verbose_name='subheading')
 	model_for_car=models.CharField(max_length=255,verbose_name='Model for car')
 	image=models.ImageField(upload_to="images/", verbose_name='image')
@@ -30,13 +28,13 @@ class Car(models.Model):
 	cost_hour=models.CharField(max_length=255,verbose_name='cost_hour')
 	cost_day=models.CharField(max_length=255,verbose_name='cost_day')
 	cost_mounth=models.CharField(max_length=255,verbose_name='cost_mounth')
-
-
 	
 	def __str__(self):
+
 		return self.model_for_car
 
 	def get_absolute_url(self):
+
 		return reverse('post',kwargs={'post_id':self.pk})
 
 class Happy_clients(models.Model):
@@ -47,4 +45,5 @@ class Happy_clients(models.Model):
 	body=models.CharField(max_length=255,verbose_name='massage')	
 
 	def __str__(self):
+
 		return self.name
